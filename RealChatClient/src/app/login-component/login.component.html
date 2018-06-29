@@ -1,0 +1,25 @@
+<h3 class="error" *ngIf="alertMessage">  {{ alertMessage }}  </h3>
+<div class="login-page">
+  <div class="form">
+    <div style="margin-top: 18px;">
+      <form class="login" method="post" #form="ngForm" (ngSubmit)="onLogin(form)">
+        <input
+          type="text"
+          name="username"
+          placeholder="username"
+          ngModel
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="password"
+          ngModel
+          required
+        />
+        <button type="submit" [disabled]="isLoading">login</button>
+        <p class="message">Not registered? <a routerLink="/register">Create an account</a></p>
+      </form>
+    </div>
+  </div>
+</div>

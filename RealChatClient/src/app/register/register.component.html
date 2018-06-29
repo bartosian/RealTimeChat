@@ -1,0 +1,24 @@
+<h3 class="error" *ngIf="alertMessage">  {{ alertMessage }}  </h3>
+<div class="login-page">
+  <div class="form">
+    <div style="margin-top: 18px;">
+      <form class="register" method="post" #form="ngForm" (ngSubmit)="onRegister(form)">
+        <input type="text"
+               name="username"
+               placeholder="username"
+               ngModel
+               required
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="password"
+          ngModel
+          required
+        />
+        <button type="submit" [disabled]="isLoading">create</button>
+        <p class="message">Already registered? <a routerLink="/login">Sign In</a></p>
+      </form>
+    </div>
+  </div>
+</div>
